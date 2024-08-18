@@ -1,0 +1,10 @@
+<h2>Search Pricing Records</h2>
+<form method="get">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for record in records %}
+        <li>{{ record }} - <a href="{% url 'edit_record' record.pk %}">Edit</a></li>
+    {% endfor %}
+</ul>
