@@ -18,10 +18,8 @@
 3. Create an Environment and Deploy: `eb create pricing-manager-env eb deploy`
 4. Set Up Static Files (if using S3) within settings.py: 
 
-'''
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+- STATIC_URL = '/static/'
+- STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# For S3
+- For S3
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
