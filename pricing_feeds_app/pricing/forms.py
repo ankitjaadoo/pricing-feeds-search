@@ -22,4 +22,4 @@ class CSVUploadForm(forms.Form):
 class PricingRecordForm(forms.ModelForm):
     class Meta:
         model = PricingRecord
-        fields = '__all__'
+        fields = ['store_id', 'sku', 'product_name', 'price', 'date']
