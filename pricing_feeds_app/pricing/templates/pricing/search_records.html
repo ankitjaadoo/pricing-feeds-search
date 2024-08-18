@@ -1,10 +1,26 @@
-<h2>Search Pricing Records</h2>
 <form method="get">
-    <input type="text" name="q" placeholder="Search...">
+    <input type="text" name="store_id" placeholder="Store ID">
+    <input type="text" name="sku" placeholder="SKU">
+    <input type="text" name="product_name" placeholder="Product Name">
     <button type="submit">Search</button>
 </form>
-<ul>
+<table>
+    <tr>
+        <th>Store ID</th>
+        <th>SKU</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Edit</th>
+    </tr>
     {% for record in records %}
-        <li>{{ record }} - <a href="{% url 'edit_record' record.pk %}">Edit</a></li>
+    <tr>
+        <td>{{ record.store_id }}</td>
+        <td>{{ record.sku }}</td>
+        <td>{{ record.product_name }}</td>
+        <td>{{ record.price }}</td>
+        <td>{{ record.date }}</td>
+        <td><a href="{% url 'edit_record' record.pk %}">Edit</a></td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
