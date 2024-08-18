@@ -8,6 +8,6 @@
 
 ## Endpoints to be tested:
 
-- `/pricing/upload` - use the file 'myFile0.csv' provided in the repo to upload.
-- `/pricing/search` - you can search for any of the products from here.
-- `/pricing/edit/<int>` - you can edit the product details from here.
+- `/pricing/upload/` - use the file 'myFile0.csv' provided in the repo to upload.
+- `/pricing/search/` - you can search for any of the products from here.
+- `/pricing/edit/<int>/` - you can edit the product details from here.
