@@ -23,3 +23,41 @@
 
 - For S3
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+### Important Design Decisions
+Before diving into the code, let's discuss some key design decisions for this application:
+
+1. Database Design:
+
+- Schema: Define tables for Store, Product, and PriceHistory. Consider using composite keys or foreign keys to link tables.
+- Indexing: Ensure proper indexing on fields like Store ID, SKU, Product Name, and Date for optimized search queries.
+- Database Choice: Use a relational database like PostgreSQL to handle complex queries and large datasets efficiently.
+
+2. Scalability:
+
+- Database Sharding/Partitioning: If the database grows large, consider sharding or partitioning by country or store ID.
+- Load Balancing: Use load balancers to distribute incoming traffic across multiple server instances.
+
+3. Data Validation:
+
+- Validate the uploaded CSV files for correct formatting and data integrity before persisting them in the database.
+
+4. Concurrency Handling:
+
+- Implement locks or use optimistic concurrency control to handle multiple users editing the same records simultaneously.
+
+5. Security:
+
+- Secure endpoints with authentication and authorization.
+- Implement data encryption for sensitive information.
+- Use HTTPS to secure data in transit.
+
+6. Deployment:
+
+- Consider containerizing the application using Docker for easier deployment and scaling.
+- Use CI/CD pipelines for automated testing and deployment.
+
+7. Logging and Monitoring:
+
+- Integrate logging for tracking errors, and user activity, and monitoring performance.
+- Use tools like Prometheus and Grafana for real-time monitoring and alerting.
